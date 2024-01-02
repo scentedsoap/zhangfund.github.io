@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+  <!-- Added My Code Here -->
+  <h1>Welcome :D</h1>
+  <p>
+    This is a project created to see whether I can help my family save for retirement! 
+    I've combined money I've made from working over the summer as in intern and money
+    from my family to start this fund consisting of publicly traded equities.
+  </p>
+
+  <h2>Investment Strategy</h2>
+  <p>
+    For now, my investment strategy is to focus on long term US public equity investments 
+    in the micro-mid cap range. This consists of companies whose market capitalization 
+    is between ($50 million - $20 billion). But this constraint is subject to change
+    depending on the valuations of larger companies! 
+  </p>
+  <p>
+    My belief is that companies with lower market caps have the largest opprotunity 
+    for growth to be the so called "10-Baggers" coined by Peter Lynch. 
+  </p>
+
+  <h2>Portfolio Breakdown</h2>
+  <p>
+    As of January 2, 2024, All the funds are currently sitting in the brokerage account 
+    collecting interest
+  </p>
+  <!-- End of My Code hereAdded My Code Here -->
+
+  {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+
+</div>
